@@ -40,7 +40,7 @@ export default Ember.View.extend(selektorMixin, {
     // setter
     } else {
       if (this.get('action')) {
-        this.sendAction('action', selected);
+        this.get('controller').send(this.get('action'), selected);
       }
       this.set('value', selected && get(selected, option));
       return selected;
